@@ -5,7 +5,7 @@ class ScrollAwareExtendedFabBehavior(
 	attrs: AttributeSet  
 ) : CoordinatorLayout.Behavior<ExtendedFloatingActionButton>(context, attrs) {  
 
-	override fun onStartNestedScroll(  
+  override fun onStartNestedScroll(  
 		coordinatorLayout: CoordinatorLayout,  
 		child: ExtendedFloatingActionButton,  
 		directTargetChild: View,  

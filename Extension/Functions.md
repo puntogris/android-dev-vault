@@ -39,8 +39,7 @@ fun Fragment.isDarkThemeOn() =
 ```
 
 #### Toolbar
-
-```
+```kotlin
 fun Fragment.registerToolbarBackButton(toolbar: MaterialToolbar){  
     toolbar.setNavigationOnClickListener {  
         findNavController().navigateUp()  
@@ -57,7 +56,6 @@ fun Fragment.launchWebBrowserIntent(uri: String, packageName: String? = null){
             if (packageName != null) it.setPackage(packageName)  
             startActivity(it)  
         }  
-
     }catch (e:Exception){  
         //handle error
     }

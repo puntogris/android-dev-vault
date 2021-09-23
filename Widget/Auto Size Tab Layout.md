@@ -3,11 +3,11 @@
 #### Class
 ```kotlin
 class AutoSizeTabLayout(context: Context, attrs: AttributeSet) : TabLayout(context, attrs) {  
-	override fun newTab(): Tab {  
-		return super.newTab().apply {  
-			setCustomView(R.layout.auto_size_tab_text)  
-		}  
-	}  
+    override fun newTab(): Tab {  
+        return super.newTab().apply {  
+            setCustomView(R.layout.auto_size_tab_text)  
+        }  
+    }  
 }
 ```
 

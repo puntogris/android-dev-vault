@@ -1,5 +1,20 @@
 ### Room Converters
+Common room converters, to use it we annotate our room db with ```@TypeConverters``` like this:
 
+#### Example
+```kotlin
+@Database(
+entities = [  
+    Example::class  
+            ], version = 1, exportSchema = false)
+
+@TypeConverters(Converters::class)  
+abstract class AppDatabase : RoomDatabase() {  
+    abstract fun exampleDao(): ExampleDao  
+}
+```
+
+#### Converters
 ```kotlin
 private val gson = Gson()  
   

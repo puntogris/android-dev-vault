@@ -1,4 +1,6 @@
 ### Base Fragment
+Base Fragment with data binding to reduce boilerplate.
+
 ```kotlin
 abstract class BaseFragment<T: ViewDataBinding>(@LayoutRes open val layout: Int): Fragment() {  
 

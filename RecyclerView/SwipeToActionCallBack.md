@@ -1,4 +1,6 @@
 ### SwipeToActionCallBack
+Used to show text behind a recyclerview item when swiping horizontally. Then we can detect this and perform an action.
+
 ```kotlin
 abstract class SwipeToActionCallback(context: Context):  
     ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {  
@@ -42,7 +44,7 @@ abstract class SwipeToActionCallback(context: Context):
 ```
 
 #### Attach
-Inside the adapter attach the listener and perform action
+Inside the adapter attach the listener and perform the action.
 ```kotlin
 override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {  
     super.onAttachedToRecyclerView(recyclerView)  

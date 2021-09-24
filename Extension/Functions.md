@@ -1,4 +1,5 @@
 ## Extensions functions
+Commonly used extension functions that make life easier and code cleaner.
 
 ### Views
 #### Visibility

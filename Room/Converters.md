@@ -2,17 +2,9 @@
 Common room converters, to use it we annotate our room db with ```@TypeConverters``` like this:
 
 #### Example
-```kotlin
-@Database(
-entities = [  
-    Example::class  
-            ], version = 1, exportSchema = false)
+To use it we need to annotate our room database with ```@TypeConverters```
 
-@TypeConverters(Converters::class)  
-abstract class AppDatabase : RoomDatabase() {  
-    abstract fun exampleDao(): ExampleDao  
-}
-```
+As shown here: [[Room&Hilt#Database]]
 
 #### Converters
 ```kotlin

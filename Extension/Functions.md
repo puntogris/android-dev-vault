@@ -1,8 +1,7 @@
 ## Extensions functions
 Commonly used extension functions that make life easier and code cleaner.
 
-### Views
-#### Visibility
+### View
 ```kotlin
 fun View.gone() {  
     visibility = View.GONE  
@@ -13,7 +12,7 @@ fun View.visible() {
 }
 ```
 
-#### Lottie
+### Lottie
 ```kotlin
 fun LottieAnimationView.playAnimationOnce(@RawRes animation: Int){  
     setAnimation(animation)  
@@ -115,4 +114,91 @@ inline fun PreferenceFragmentCompat.preferenceOnClick(key: String, crossinline b
         true  
     }  
 }
+```
+
+
+### Recycler view
+
+```kotlin
+fun RecyclerView.scrollToTop() {  
+    layoutManager?.let {  
+        val firstVisibleItemPosition = it.findFirstVisibleItemPosition()  
+        if (firstVisibleItemPosition > 6) {  
+            scrollToPosition(6)  
+    } 
+    smoothScrollToPosition(0)  
+
+    if (it is StaggeredGridLayoutManager) {  
+            it.invalidateSpanAssignments()  
+        }
+    }  
+}  
+
+fun RecyclerView.LayoutManager?.findFirstVisibleItemPosition(): Int {  
+    return when (this) {  
+        is LinearLayoutManager -> findFirstVisibleItemPosition()  
+        is GridLayoutManager -> findFirstVisibleItemPosition()  
+        is StaggeredGridLayoutManager -> findFirstVisibleItemPositions(null).first()  
+        else -> RecyclerView.NO_POSITION  
+    }  
+}
+```
+
+### LiveData
+Will trigger the observable when updating a field.
+```kotlin
+inline fun <T> MutableLiveData<T>.setField(transform: T.() -> Unit) {
+    this.value = this.value?.apply(transform) 
+}
+```
+
+### Broadcast Receiver
+```kotlin
+@DelicateCoroutinesApi  
+fun BroadcastReceiver.goAsync(  
+    coroutineScope: CoroutineScope = GlobalScope,  
+    block: suspend () -> Unit  
+) {  
+    val result = goAsync()  
+    coroutineScope.launch {  
+        try {  
+            block()  
+        } catch (e:Exception) {  
+            Timber.d(e.message.toString())  
+        }finally {  
+            result?.finish()  
+        }
+    }  
+}
+```
+
+### Context
+Used with Android 12 as it requires to check this when using Alarm Manager.
+```kotlin
+fun Context.isIgnoringBatteryOptimizations(): Boolean{  
+    val pm = getSystemService(PowerManager::class.java)  
+    return (pm.isIgnoringBatteryOptimizations(packageName))  
+}
+```
+
+### View Pager
+```kotlin
+fun ViewPager2.setPageFadeTransformer(){  
+    setPageTransformer { page, position ->  
+        page.alpha = when {  
+            position <= -1.0F || position >= 1.0F -> 0.0F  
+            position == 0.0F -> 1.0F  
+            else -> 1.0F - abs(position)  
+        } 
+    }  
+}
+```
+
+### Primitives
+
+```kotlin
+fun String.capitalizeFirstChar() =  
+    replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }  
+  
+fun String.capitalizeWords(): String = split(" ").joinToString(" ") { it.capitalizeFirstChar() }
 ```

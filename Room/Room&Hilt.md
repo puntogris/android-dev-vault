@@ -27,7 +27,7 @@ class AppDatabaseModule {
 
     @Provides  
     @Singleton 
-    fun provideReminderDatabase(@ApplicationContext appContext: Context): AppDatabase {  
+    fun provideExampleDatabase(@ApplicationContext appContext: Context): AppDatabase {  
         return Room  
             .databaseBuilder(  
                 appContext,  

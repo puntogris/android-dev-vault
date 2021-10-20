@@ -25,6 +25,29 @@ Svg compression.
 Generate privacy policy,  terms & conditions.
 [Privacy generator](https://app-privacy-policy-generator.firebaseapp.com)
 
+##### Coolors
+The super fast color schemes generator.
+[Coolors](https://coolors.co/)
+
+#### Design
+##### Figma
+[Figma](https://www.figma.com/login)
+
+#### Brand
+##### Logo generator
+[Brandmark](https://app.brandmark.io/v3/)
+
+##### Name Generator
+[Namelix](https://namelix.com/)
+#### Ilustrations
+##### Free
+[Humans](https://www.humaaans.com/)
+[Undraw](https://undraw.co/)
+[Open Doodles](https://generator.opendoodles.com/)
+
+##### Paid
+[Control](https://control.rocks/)
+[Struct](https://struct.rocks/)
 #### Icons
 
 ##### Noun Project
@@ -42,3 +65,4 @@ Lightweight, scalable animations for your ads and social media.
 ##### Lottie Lab
 Create & edit  Lottie animations.
 [Lottie lab](https://lottielab.io/)
+

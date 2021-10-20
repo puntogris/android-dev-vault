@@ -1,4 +1,4 @@
-# android-dev-cheat-sheet
+# android-dev-vault
 
 This is a collection of boilerplate, extensions and stuff i use on the daily when creating Android apps.
 

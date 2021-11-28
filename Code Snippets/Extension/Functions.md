@@ -1,7 +1,7 @@
 ## Extensions functions
 Commonly used extension functions that make life easier and code cleaner.
 
-### Viewa
+### View
 ```kotlin
 fun View.gone() {  
     visibility = View.GONE  
